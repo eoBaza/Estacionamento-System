@@ -1,6 +1,8 @@
 from datetime import datetime
 from pydantic import BaseModel
 
+class PagamentosConfirmadosUpdate(BaseModel):
+    placa:str
 
 class PagamentosConfirmadosResponse(BaseModel):
     ticket_id: int

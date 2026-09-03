@@ -1,4 +1,3 @@
-from Database.Database import get_db
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 

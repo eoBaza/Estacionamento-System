@@ -1,6 +1,7 @@
 from Database.Database import get_db
 from Pagamentos.schemas.PagamentoPendente import PagamentosPendentesResponse
 from Pagamentos.models.PagamentoPendente import PagamentoPendente
+from Pagamentos.services.PagamentosConfirmados_Service import confirmar_pagamento
 from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends
 
@@ -15,3 +16,4 @@ def verify_pagamento_pendente(placa: str, db: Session = Depends(get_db)):
 def Pagamentos_Pendentes_List(db:Session = Depends(get_db)):
     pagamentos = db.query(PagamentoPendente).all()
     return pagamentos
+
